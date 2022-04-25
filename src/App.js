@@ -1,24 +1,21 @@
 import logo from './logo.svg';
 import './App.css';
-
+import PhotoContextProvider from './Context/PhotoContext';
+import {BrowserRouter, Route, Routes} from 'react-router-dom'
+import Header from './components/Header';
+import Item from './components/Item';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <PhotoContextProvider>
+      <BrowserRouter >
+        <Routes>
+          <Route element={<Header />} path="/"> 
+            <Route path='/:itemSearch' element={<Item />}/>
+            <Route path='/search/:itemSearch' element={<Item />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </PhotoContextProvider>
   );
 }
 

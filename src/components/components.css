@@ -1,0 +1,24 @@
+.nav-menu{
+
+}
+.nav-menu ul{
+    display: flex;
+    width: 45%;
+    margin: 30px auto;
+    justify-content: space-around;
+}
+.navbar li{
+    list-style-type: none;
+    width: 130px;
+    height: 30px;
+    background-color: rgb(16, 50, 39);
+    text-align: center;
+    border-radius: 4px;
+    padding-top: 3px;
+}
+.navLink{
+   text-decoration: none; 
+   color: #fff;
+   padding: 5px 40px;
+
+}
